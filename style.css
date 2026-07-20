@@ -1,0 +1,33 @@
+/* Styles for the entire page */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Styles for all labels */
+label {
+    display: block;
+}
+
+/* Styles for all input boxes */
+input {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+/* Extra margin space for the last input box before the button */
+#dob {
+    margin-bottom: 15px;
+}
+
+/* Styles for the submit button */
+button {
+    padding: 6px 12px;
+    width: 100%;
+}
