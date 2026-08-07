@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esports Tournament</title>
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Embedded CSS -->
+<style>
+
+.content{
+    display:none;
+    padding:30px;
+}
+
+#home:checked ~ .pages #home-content,
+#tournament:checked ~ .pages #tournament-content,
+#contact:checked ~ .pages #contact-content{
+    display:block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Hidden Radio Buttons -->
+<input type="radio" name="tab" id="home" checked>
+<input type="radio" name="tab" id="tournament">
+<input type="radio" name="tab" id="contact">
+
+<!-- Navigation -->
+<nav>
+
+<label for="home">Home</label>
+
+<label for="tournament">Tournament</label>
+
+<label for="contact">Contact</label>
+
+</nav>
+
+<div class="pages">
+
+    <!-- Home -->
+    <div id="home-content" class="content">
+
+        <h1 style="color:white;background:purple;padding:10px;">
+            Esports Arena
+        </h1>
+
+        <h2>Welcome</h2>
+
+        <p>
+            Welcome to the Esports Arena where gamers compete in exciting
+            tournaments and win amazing prizes.
+        </p>
+
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700"
+             width="500"
+             alt="Gaming">
+
+    </div>
+
+    <!-- Tournament -->
+    <div id="tournament-content" class="content">
+
+        <h2>Upcoming Tournaments</h2>
+
+        <table border="1">
+
+            <tr>
+                <th>Game</th>
+                <th>Date</th>
+                <th>Prize Pool</th>
+            </tr>
+
+            <tr>
+                <td>BGMI</td>
+                <td>10 August</td>
+                <td>₹50,000</td>
+            </tr>
+
+            <tr>
+                <td>Valorant</td>
+                <td>18 August</td>
+                <td>₹1,00,000</td>
+            </tr>
+
+            <tr>
+                <td>CS2</td>
+                <td>25 August</td>
+                <td>₹75,000</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Contact -->
+    <div id="contact-content" class="content">
+
+        <h2>Contact Us</h2>
+
+        <form>
+
+            Name <br>
+            <input type="text"><br><br>
+
+            Email <br>
+            <input type="email"><br><br>
+
+            Message <br>
+            <textarea rows="5" cols="40"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Send">
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
