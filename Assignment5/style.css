@@ -1,0 +1,68 @@
+
+/* Center the content on the webpage */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f3f5f9;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+}
+
+/* Arrange squares in a 2 x 2 grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 8px;
+    margin-top: 25px;
+}
+
+/* Common square styling */
+.square {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+/* Four different colors and movement directions */
+.red {
+    background-color: red;
+    --x: -1;
+    --y: -1;
+}
+
+.blue {
+    background-color: blue;
+    --x: 1;
+    --y: -1;
+}
+
+.green {
+    background-color: green;
+    --x: -1;
+    --y: 1;
+}
+
+.orange {
+    background-color: orange;
+    --x: 1;
+    --y: 1;
+}
+
+/* Move the clicked square diagonally outward */
+.square.moved {
+    transform: translate(
+        calc(var(--x) * 45px),
+        calc(var(--y) * 45px)
+    );
+}
