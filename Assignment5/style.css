@@ -1,5 +1,4 @@
 
-/* Center the content on the webpage */
 body {
     margin: 0;
     height: 100vh;
@@ -10,31 +9,51 @@ body {
     background-color: #f3f5f9;
 }
 
-/* Main container */
 .container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+}
+
+/* Text stays behind the squares */
+
+.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    margin: 0;
     text-align: center;
+    color: #202938;
+    font-size: 20px;
+    line-height: 1.4;
+    z-index: 0;
 }
 
-/* Arrange squares in a 2 x 2 grid */
+
+/* Four squares touch each other */
 .grid {
+    position: absolute;
+    inset: 0;
     display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: repeat(2, 100px);
-    gap: 8px;
-    margin-top: 25px;
+    grid-template-columns: repeat(2, 110px);
+    grid-template-rows: repeat(2, 110px);
+    gap: 0;
+    z-index: 1;
 }
 
-/* Common square styling */
 .square {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
+    padding: 0;
     border: none;
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
     transition: transform 0.4s ease;
 }
 
-/* Four different colors and movement directions */
+/* Square colors and outward directions */
 .red {
     background-color: red;
     --x: -1;
@@ -59,10 +78,10 @@ body {
     --y: 1;
 }
 
-/* Move the clicked square diagonally outward */
+/* Move the selected square outward */
 .square.moved {
     transform: translate(
-        calc(var(--x) * 45px),
-        calc(var(--y) * 45px)
+        calc(var(--x) * 55px),
+        calc(var(--y) * 55px)
     );
 }
