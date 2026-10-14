@@ -1,12 +1,18 @@
 
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import Input from "./Input";
 import Display from "./Display";
+import "./App.css";
 
 function App() {
-    const [name, setName] = useState("");
-    const [city, setCity] = useState("");
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        age: "",
+        phone: "",
+        city: ""
+    });
 
     return (
         <BrowserRouter>
@@ -15,20 +21,15 @@ function App() {
                     path="/"
                     element={
                         <Input
-                            setName={setName}
-                            setCity={setCity}
+                            formData={formData}
+                            setFormData={setFormData}
                         />
                     }
                 />
 
                 <Route
                     path="/display"
-                    element={
-                        <Display
-                            name={name}
-                            city={city}
-                        />
-                    }
+                    element={<Display formData={formData} />}
                 />
             </Routes>
         </BrowserRouter>
